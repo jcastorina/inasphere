@@ -1,9 +1,7 @@
 function handleResize() {
-  h = window.innerHeight / RESOLUTION_SCALE_DOWN;
-  w = window.innerWidth / RESOLUTION_SCALE_DOWN;
-  renderer.setSize(w, h);
-  renderer.domElement.style.width = "100%";
-  renderer.domElement.style.height = "100%";
+  w = window.innerWidth;
+  h = w * ASPECT;
+  renderer0.setSize(w, h);
   game.camera.aspect = w / h;
   game.camera.updateProjectionMatrix();
 }
@@ -12,8 +10,12 @@ function handleDocumentMouseMove(event) {
   if (lockedMouse) {
     vmouse.x = (event.clientX / window.innerWidth) * 2 - 1 - vmouseOffset.x;
     vmouse.y = -(event.clientY / window.innerHeight) * 2 + 1 - vmouseOffset.y;
+    me.mouse.past.x = me.mouse.curr.x;
+    me.mouse.past.y = me.mouse.curr.y;
     me.mouse.curr.x += event.movementX / MOUSE_SENSITIVITY;
     me.mouse.curr.y += event.movementY / MOUSE_SENSITIVITY;
+    me.mouse.last.x = me.mouse.curr.x - me.mouse.past.x;
+    me.mouse.last.y = me.mouse.curr.y - me.mouse.past.y;
   }
 }
 

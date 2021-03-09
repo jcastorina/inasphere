@@ -1,11 +1,6 @@
-//controls
-
 //*****************/
-//   GLOBAL SETTINGS
+//   CONTROL OBJECTS
 //
-const MOUSE_SENSITIVITY = 200;
-const GRAVITY = 0.05;
-//*****************/
 
 const vmouse = new THREE.Vector2();
 const vmouseOffset = new THREE.Vector2();
@@ -33,15 +28,17 @@ const me = {
 };
 
 const game = {
-  camera: playerCamera,
+  camera: devCamera,
 };
 
-renderer.domElement.onclick = () => {
-  renderer.domElement.requestPointerLock();
-  if (newLockedMouse) {
-    vmouseOffset.x = (event.clientX / window.innerWidth) * 2 - 1;
-    vmouseOffset.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    newLockedMouse = false;
-  }
-  lockedMouse = true;
-};
+// renderer0.domElement.onclick = () => {
+//   renderer0.domElement.requestPointerLock();
+//   if (newLockedMouse) {
+//     vmouseOffset.x = (event.clientX / window.innerWidth) * 2 - 1;
+//     vmouseOffset.y = -(event.clientY / window.innerHeight) * 2 + 1;
+//     newLockedMouse = false;
+//   }
+//   lockedMouse = true;
+// };
+
+//*****************/

@@ -2,16 +2,10 @@ body {
   background: linear-gradient(#123456, #345678);
   margin: 0;
   height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
-#canvas-container {
-  display: flex;
-  background-color: blanchedalmond;
-  height: 100%;
-  overflow: hidden;
-}
-
-canvas {
-  flex: 1;
-  position: relative;
+#viewport-container {
+  background-color: cadetblue;
 }

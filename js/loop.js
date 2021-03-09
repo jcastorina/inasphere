@@ -5,10 +5,11 @@ time.start();
 
 const animate = () => {
   stats.begin();
-  const delta_norm = FPS / (1 / time.getDelta());
+  const delta = FPS / (1 / time.getDelta());
   requestAnimationFrame(animate);
-  update(delta_norm);
-  renderer.render(scene, game.camera);
+  update(delta);
+  renderer0.render(scene, game.camera);
+
   stats.end();
 };
 animate();

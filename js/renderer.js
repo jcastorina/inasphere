@@ -1,10 +1,6 @@
-let RESOLUTION_SCALE_DOWN = 1;
-let h = window.innerHeight / RESOLUTION_SCALE_DOWN;
-let w = window.innerWidth / RESOLUTION_SCALE_DOWN;
-const scene = new THREE.Scene();
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(w, h);
-renderer.domElement.style.width = "100%";
-renderer.domElement.style.height = "100%";
-const container = document.querySelector("div#canvas-container");
-container.appendChild(renderer.domElement);
+const renderer0 = new THREE.WebGLRenderer();
+renderer0.setSize(w, h);
+
+renderer0.domElement.style.display = "none";
+renderer0.domElement.style.position = "absolute";
+document.body.appendChild(renderer0.domElement);
